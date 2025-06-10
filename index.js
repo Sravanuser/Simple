@@ -15,7 +15,7 @@ app.use(cors());
 app.use("/api", UserRoute);
 app.use(express.static(path.join(dirname, "/client/dist")))
 
-app.get("*", (request, response) => {
+app.get("/{*any}", (request, response) => {
     response.sendFile(path.join(dirname, "client", "dist", "index.html"))
 })
 
